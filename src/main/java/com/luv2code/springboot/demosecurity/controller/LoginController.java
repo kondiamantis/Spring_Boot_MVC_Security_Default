@@ -11,6 +11,6 @@ public class LoginController {
 
         //just returns the name of the html file that will be loaded
         //i have to create manually this file
-        return "plain-login";
+        return "fancy-login";
     }
 }

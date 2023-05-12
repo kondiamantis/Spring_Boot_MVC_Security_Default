@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:sec="http://www.thymeleaf.org/extras/spring-security" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>luv2code Company Home Page</title>
@@ -7,7 +7,26 @@
 <body>
     <h2>luv2code Company Home Page</h2>
     <hr>
-    Welcome to the luv2code company home page!
+    <p>Welcome to the luv2code company home page!</p>
+    <hr>
+
+    <!--display user name and role -->
+    <p>
+        User: <span sec:authentication="principal.username"></span>
+    </p>
+    <br>
+    <p>
+        Role(s): <span sec:authentication="principal.authorities"></span>
+    </p>
+    <br>
+    <!-- Add a link to point to /leaders...this is for the managers -->
+    <a th:href="@{/leaders}">Leadership meeting</a>
+    (Only for managers)
+
+<!-- Add a logout button -->
+    <form  action="#" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout" />
+    </form>
 
 </body>
 </html>

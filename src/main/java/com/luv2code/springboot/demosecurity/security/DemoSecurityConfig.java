@@ -48,6 +48,9 @@ public class DemoSecurityConfig {
                 .loginProcessingUrl("/authenticateTheUser")
                 .permitAll()
                 .and()
+                .logout()
+                .permitAll()
+                .and()
                 .httpBasic();
 
 
