@@ -13,4 +13,13 @@ public class LoginController {
         //i have to create manually this file
         return "fancy-login";
     }
+
+    //add request mapping for /access-denied
+    @GetMapping("/access-denied")
+    public String showAccessDenied(){
+
+        //just returns the name of the html file that will be loaded
+        //i have to create manually this file
+        return "access-denied";
+    }
 }
